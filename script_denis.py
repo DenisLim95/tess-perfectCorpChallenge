@@ -5,7 +5,9 @@ import glob, os
 
 
 def Usage():
+	print("\n\n#################################################################")
 	print("Usage:")
+	print("#################################################################\n")
 	print("For all files: 'script_denis.py all [0/1/2]'\n")
 	print("For specific file: 'script_denis.py [filename] [0/1/2]'\n")
 	print("Third argument: \n")
@@ -94,8 +96,8 @@ def ProcessOne(run_extract):
 	file.close()
 	
 	# Print
-	print("Tesseract output: \n")
-	print(text)
+	#print("Tesseract output: \n")
+	#print(text)
 
 def ProcessAll(run_extract):
 
@@ -172,8 +174,8 @@ def ProcessAll(run_extract):
 		file.close()
 
 		# Print
-		print("Tesseract Output for image '%s'\n" %(filename))
-		print(text)
+		#print("Tesseract Output for image '%s'\n" %(filename))
+		#print(text)
 		
 
 def CleanUp():
@@ -199,9 +201,9 @@ def CleanUp():
 def main():
 
 	if len(sys.argv) != 3:
-		Usage()
+		return Usage()
 	elif int(sys.argv[2]) < 0 or int(sys.argv[2]) > 2:
-		Usage()
+		return Usage()
 	else:
 		run_extract = sys.argv[2]
 		if sys.argv[1] == 'all':
